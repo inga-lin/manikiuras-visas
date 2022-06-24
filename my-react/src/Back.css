@@ -299,7 +299,11 @@ body {
 
 .trint {
   padding: 5px 22px;
+  color: white;
 }
 
+.trint:hover {
+  color: black;
+}
 
   /*komentarai*/
