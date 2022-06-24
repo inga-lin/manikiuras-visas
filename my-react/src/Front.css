@@ -149,3 +149,24 @@
    height: 100px;
  }
  /*Išrūšuoti */
+
+
+/*komentarai*/
+.komentarai {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+.kom-atvaizdavimas {
+    padding: 10px;
+    background-color: red;
+}
+
+.kom-atvaizdavimass {
+
+    padding: 10px;
+    background-color: aqua;
+}
+/*komentarai*/

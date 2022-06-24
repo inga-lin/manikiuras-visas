@@ -19,7 +19,9 @@ function Front({ show }) {
     // })
     //},[show]);//{/*a.<Link> ir isrusiuoja//.show yra propsas kuri perduodam i Front.jsx*/}
     
-
+    //40004 komentarai
+    const [lastUpdate, setLastUpdate] = useState(Date.now()); //302 nusikopinom is Back.jsx
+    
     //101 cia pasikeite setManikiuras(res.data) i (getDataFromServer(res.data)); eilute del rusiavimo vardo ir kainos
     const [manikiuras, setManikiuras] = useReducer(reducer, []); //101----sitas atsirado del rusiavimo serverio puseje
     //101 cia atsirado rusiavimas vardo ir kainos
@@ -30,7 +32,7 @@ function Front({ show }) {
       console.log(res.data);//2.-22. bendraujam su serveriu ir issitraukiam info 
       setManikiuras(getDataFromServer(res.data));//101 getDataFromServer(res.data) 
     })
-  },[show]);//{/*a.<Link> ir isrusiuoja//.show yra propsas kuri perduodam i Front.jsx*/}
+  },[show, lastUpdate]);//{/*a.<Link> ir isrusiuoja//.show yra propsas kuri perduodam i Front.jsx*/}
 
 
     //101 serverio puseje rusiavimas vardo ir kainos
@@ -53,6 +55,16 @@ function Front({ show }) {
             setManikiuras(getDataFromServer(res.data));//getDataFromServer pasiimam is Action/index.js
         });
     }
+
+
+
+    //40004 komentarai
+    const saveComment = (id, value) => {
+        axios.post('http://localhost:3003/manikiuro-comment/' + id, {comment: value})//{comment: ... -objektas}
+        .then(res => {
+            setLastUpdate(Date.now());
+        });
+        }
 
     return(
     <>
@@ -80,7 +92,7 @@ function Front({ show }) {
                     <div className="sarasass sar">
                         <ul className="ull">
                             {
-                                manikiuras.map(m => <ManikiuroListoAtvaizdavimasFronte key={m.id} manikiuras={m}></ManikiuroListoAtvaizdavimasFronte>)//2 bendraujam su serveriu ir issitraukiam info//5. ManikiuroListoAtvaizdavimas//6.setIstrintiId istrinsim eilutes info
+                                manikiuras.map(m => <ManikiuroListoAtvaizdavimasFronte key={m.id} manikiuras={m} saveComment={saveComment}></ManikiuroListoAtvaizdavimasFronte>)//2 bendraujam su serveriu ir issitraukiam info//5. ManikiuroListoAtvaizdavimas//6.setIstrintiId istrinsim eilutes info
                             }
                         </ul>
                     </div>
@@ -123,7 +135,7 @@ function Front() {
     
     //Read //2.-22.
     useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info is savo D.B.///////
-    axios.get('http://localhost:3003/manikiuro-salonas')
+    axios.get('http://localhost:3003/manikiuro-manager')
     .then(res => {
       console.log(res.data);//2.-22. bendraujam su serveriu ir issitraukiam info 
       setManikiuras(res.data);//2.-22. bendraujam su serveriu ir issitraukiam info 

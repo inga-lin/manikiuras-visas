@@ -28,7 +28,7 @@ function Back() {
 
  //Read //2 bendraujam su serveriu ir issitraukiam info is savo D.B.///////
   useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info is savo D.B.///////
-    axios.get('http://localhost:3003/manikiuro-salonas')
+    axios.get('http://localhost:3003/manikiuro-manager')
     .then(res => {
       console.log(res.data);//2 bendraujam su serveriu ir issitraukiam info 
       setManikiuras(res.data);//2 bendraujam su serveriu ir issitraukiam info 
@@ -44,7 +44,7 @@ function Back() {
     if (null === createData) { //3)jeigu createData yra === null nieko nedarom ir einam lauk is cia
       return;
     }
-    axios.post('http://localhost:3003/manikiuro-salonas', createData)//3)kai jis  jau tures kazka naujo tai ta nauja info dedam i 'http://localhost:3003/trees-manager', createData //post-isiusti
+    axios.post('http://localhost:3003/manikiuro-manager', createData)//3)kai jis  jau tures kazka naujo tai ta nauja info dedam i 'http://localhost:3003/trees-manager', createData //post-isiusti
     .then(res => {
       console.log(res);  //3)console.log(res) pasiziurim ka mums servas atsakys
       setLastUpdate(Date.now()); //4
@@ -59,7 +59,7 @@ function Back() {
     if (null === istrintiId) { //6)jeigu createData yra === null nieko nedarom ir einam lauk is cia
       return;
     }
-    axios.delete('http://localhost:3003/manikiuro-salonas/' + istrintiId.id, ) //!!!!nepamirsti gale prideti /  prie manikiuro-salonas/  
+    axios.delete('http://localhost:3003/manikiuro-manager/' + istrintiId.id, ) //!!!!nepamirsti gale prideti /  prie manikiuro-manager/  
     .then(res => {
       console.log(res); 
       setLastUpdate(Date.now()); //4
@@ -73,7 +73,7 @@ function Back() {
   //if (null === setCreateData) {
  //   return;
   //}
- // axios.put('http://localhost:3003/manikiuro-salonas/'+ setCreateData.id, setCreateData) //
+ // axios.put('http://localhost:3003/manikiuro-manager/'+ setCreateData.id, setCreateData) //
   //.then(res => {
   //  console.log(res);
  //   setLastUpdate(Date.now());//7paskutinis pakeitimas turi buti dabartine Data
@@ -88,13 +88,22 @@ useEffect(() => {
   if (null === redaguotiCreateData) { //3)jeigu createData yra === null nieko nedarom ir einam lauk is cia
     return;
   }
-  axios.put('http://localhost:3003/manikiuro-salonas/' + redaguotiCreateData.id, redaguotiCreateData)//3)kai jis  jau tures kazka naujo tai ta nauja info dedam i 'http://localhost:3003/trees-manager', createData //post-isiusti
+  axios.put('http://localhost:3003/manikiuro-manager/' + redaguotiCreateData.id, redaguotiCreateData)//3)kai jis  jau tures kazka naujo tai ta nauja info dedam i 'http://localhost:3003/trees-manager', createData //post-isiusti
   .then(res => {
     console.log(res);  //3)console.log(res) pasiziurim ka mums servas atsakys
     setLastUpdate(Date.now()); //4
    }); 
 },[redaguotiCreateData]);
 
+
+
+const deleteComment = id => {//700 istrinam komentarus is Components/TreeLine.jsx
+    axios.delete('http://localhost:3003/manikiuro-delete-comment/' + id, ) //cia nepamirsti prie http galo prirasyti / ir prideti deleteId objekta su savybe id(jis istrins visa eilutes info) //delete-istrinti
+    .then(res => {
+      console.log(res);
+      setLastUpdate(Date.now());//7paskutinis pakeitimas turi buti dabartine Data
+    });
+  }
 
   return (
     <>
@@ -108,7 +117,7 @@ useEffect(() => {
           <div className="sarasas">
             <ul className='ul' >
               {
-                 manikiuras.map(m => <ManikiuroListoAtvaizdavimas key={m.id} manikiuras={m}setIstrintiId={setIstrintiId} setRedaguotiModalData={setRedaguotiModalData}></ManikiuroListoAtvaizdavimas>)//2 bendraujam su serveriu ir issitraukiam info//5. ManikiuroListoAtvaizdavimas//6.setIstrintiId istrinsim eilutes info
+                 manikiuras.map(m => <ManikiuroListoAtvaizdavimas key={m.id} manikiuras={m}setIstrintiId={setIstrintiId} setRedaguotiModalData={setRedaguotiModalData} deleteComment={deleteComment}></ManikiuroListoAtvaizdavimas>)//2 bendraujam su serveriu ir issitraukiam info//5. ManikiuroListoAtvaizdavimas//6.setIstrintiId istrinsim eilutes info
               }
             </ul>
           </div>
