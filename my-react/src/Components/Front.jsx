@@ -78,7 +78,9 @@ function Front({ show }) {
                     <Link className="nav-link" to="/prancuziskas">Prancūziškas</Link>{/*a.<Link> ir isrusiuoja */}
                     <Link className="nav-link" to="/kombinuotas">Kombinuotas</Link>{/* a.<Link> ir isrusiuoja */}
                 </div> 
-                <div className="slaptas">
+
+            </nav>
+            <div className="slaptas">
                     <Link className="slaptas-drop" to="/">Visi</Link>
                     <div className="drop-down">
                     <Link className="nav-link aa" to="/">Visi</Link>
@@ -86,8 +88,7 @@ function Front({ show }) {
                     <Link className="nav-link aa" to="/prancuziskas">Prancūziškas</Link>{/*a.<Link> ir isrusiuoja */}
                     <Link className="nav-link aa" to="/kombinuotas">Kombinuotas</Link>
                     </div>
-                </div> 
-            </nav>
+            </div> 
         </div>
             <div className="stulpeliu-tevass">
                 <div className="stulpeliu-vaikas11">

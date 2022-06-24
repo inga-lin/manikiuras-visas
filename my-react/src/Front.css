@@ -17,7 +17,7 @@
  .navbar-man{
     display: flex;
     gap: 20px;
-    margin-right: 20px;
+    padding-right: 20px;
  }
  
  a {
@@ -140,14 +140,15 @@
      margin: 10px 20px;
  }
  
- .rus-button {
+.rus-button {
      display: flex;
      gap: 10px;
- }
- .maziausia {
+}
+
+.maziausia {
    width: 100px;
    height: 100px;
- }
+}
  /*Išrūšuoti */
 
 
@@ -223,7 +224,10 @@ textarea:valid {
 }
 .slaptas {
     position: relative;
-    display: inline-block;
+    float: right;/* nustume i desine puse*/
+    top: -80px;
+
+    z-index: 200;
 }
 
 .drop-down {
