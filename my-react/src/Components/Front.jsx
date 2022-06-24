@@ -81,7 +81,7 @@ function Front({ show }) {
 
             </nav>
             <div className="slaptas">
-                    <Link className="slaptas-drop" to="/">Visi</Link>
+                    <Link className="slaptas-drop dd" to="/">Visi</Link>
                     <div className="drop-down">
                     <Link className="nav-link aa" to="/">Visi</Link>
                     <Link className="nav-link aa" to="/klasikinis">Klasikinis</Link>{/*//a.butinas linkams /leaf nurodo kaip i ji patekti i http://localhost:3000/leaf*/}

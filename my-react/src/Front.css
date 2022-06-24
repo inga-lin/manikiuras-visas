@@ -122,6 +122,15 @@
     .ull {
       justify-content: space-around;
     }
+
+    .navbar {
+        position: sticky;
+        
+    }
+
+    .con-pagri {
+         margin-top: 0px;
+    }
 }
 /*body*/
  
@@ -224,10 +233,10 @@ textarea:valid {
 }
 .slaptas {
     position: relative;
-    float: right;/* nustume i desine puse*/
     top: -80px;
-
+    float: right;/* nustume i desine puse*/
     z-index: 200;
+    
 }
 
 .drop-down {
@@ -266,7 +275,14 @@ textarea:valid {
   .navbar-man {
     display: none;
   }
+ 
+  .rus-button {
+    display: grid;
+  }
 
+  .container3{
+    position: static;
+  }
 }
 
 /*nav juosta tel*/
