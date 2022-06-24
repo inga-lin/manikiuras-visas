@@ -210,15 +210,17 @@ textarea:valid {
 /*nav juosta tel*/
 .slaptas-drop {
     display: none;
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
     border: none;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 20px;
+    padding: 0px 30px;
 }
 
+.slaptas-drop:hover {
+    color: var(--trecia-spalva);
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    transition: 500ms;
+}
 .slaptas {
     position: relative;
     display: inline-block;

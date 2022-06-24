@@ -73,13 +73,13 @@ function Front({ show }) {
             <nav className="navbar">
                 <a className="nav-linkk" href="/">Manikiūras Tau...</a>
                 <div className="navbar-man ">
-                     <Link className="nav-link" to="/">Visi</Link>  {/*//a.butinas linkams (<Link className="nav-link" to="/">Home</Link>)*/}
+                    <Link className="nav-link" to="/">Visi</Link>  {/*//a.butinas linkams (<Link className="nav-link" to="/">Home</Link>)*/}
                     <Link className="nav-link" to="/klasikinis">Klasikinis</Link>{/*//a.butinas linkams /leaf nurodo kaip i ji patekti i http://localhost:3000/leaf*/}
                     <Link className="nav-link" to="/prancuziskas">Prancūziškas</Link>{/*a.<Link> ir isrusiuoja */}
                     <Link className="nav-link" to="/kombinuotas">Kombinuotas</Link>{/* a.<Link> ir isrusiuoja */}
                 </div> 
                 <div className="slaptas">
-                    <button className="slaptas-drop" >Visi</button>
+                    <Link className="slaptas-drop" to="/">Visi</Link>
                     <div className="drop-down">
                     <Link className="nav-link aa" to="/">Visi</Link>
                     <Link className="nav-link aa" to="/klasikinis">Klasikinis</Link>{/*//a.butinas linkams /leaf nurodo kaip i ji patekti i http://localhost:3000/leaf*/}
