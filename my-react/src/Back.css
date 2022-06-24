@@ -105,7 +105,7 @@ body {
   }
   
   .li{
-    border-bottom: 1px solid var(--antra-spalva);
+    border-bottom: 3px solid var(--antra-spalva);
     width: 90%;
     padding: 10px;
     margin-left: -10px;
@@ -264,18 +264,42 @@ body {
     box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
   }
   
-  .save:hover{
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 2px; 
-  }
+.save:hover{
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 2px; 
+}
   
-  .cancel {
-    background-color:var(--ketvirta-spalva);
-    box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
-  }
+.cancel {
+  background-color:var(--ketvirta-spalva);
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
+}
   
-  .cancel:hover{
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 2px; 
-  }
+.cancel:hover{
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 2px; 
+}
   /*Modalas.jsx*/
+
+  /*komentarai*/
+
+.back-komentarai {
+  padding: 0px;
+}
+
+.back-komentaras {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--pirma-spalva);
+  padding: 15px 5px;
+}
+
+.back-komentaras:last-child {
+  border-bottom: none;
+}
+
+.trint {
+  padding: 5px 22px;
+}
+
+
+  /*komentarai*/

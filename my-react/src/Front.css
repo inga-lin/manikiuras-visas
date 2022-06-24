@@ -185,7 +185,16 @@
 
 textarea:valid {
     border: 2px solid var(--pirma-spalva);
-  }
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
+    border-radius: 0px 20px 0px 20px;
+}
 
+.kom-button {
+   background-color: var(--pirma-spalva);
+   box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
+}
 
+.kom-button:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 3px; 
+}
 /*komentarai*/
