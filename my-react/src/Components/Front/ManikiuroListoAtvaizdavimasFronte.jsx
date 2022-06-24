@@ -21,9 +21,12 @@ function ManikiuroListoAtvaizdavimasFronte({manikiuras, saveComment}) { //40004 
                 </div>
                 <div className="komentarai" >{/*40004 komentaro atvaizdavimas*/}
                     <div className="">
-                        <textarea className="kom-textarea" rows="4" onChange={e => setComment(e.target.value)} value={comment} placeholder="Comment" />{/*40004 komentaro atvaizdavimas*/}
+                        <textarea className="kom-textarea" rows="4"  minlength="10" maxlength="40" onChange={e => setComment(e.target.value)} value={comment} placeholder="Palik atsiliepima čia" />{/*40004 komentaro atvaizdavimas*/}
                     </div>
-                    <button type="button" className="kom-button" onClick={clickComment}>Komentaras</button>{/*40004 komentaro atvaizdavimas*/}
+                    <button type="button" className="kom-button" onClick={clickComment}>Išsaugoti</button>{/*40004 komentaro atvaizdavimas*/}
+                </div>
+                <div>
+                    <h3 className="atsiliepimai">Atsiliepimai</h3>
                 </div>
                 <div className="kom-atvaizdavimas">
                     {

@@ -159,14 +159,33 @@
     align-items: center;
 }
 
+.atsiliepimai {
+    display: flex;
+    justify-content: center;
+}
+
 .kom-atvaizdavimas {
-    padding: 10px;
-    background-color: red;
+    display: grid;
+    gap: 5px;
+    padding: 1px;
+    margin: 1px;
 }
 
 .kom-atvaizdavimass {
-
-    padding: 10px;
-    background-color: aqua;
+    border-bottom: 3px solid var(--trecia-spalva);
+    padding: 5px 5px;
+    margin: 1px;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.manikiuro-listass:hover  .kom-atvaizdavimass {
+    border-bottom: 3px solid var(--pirma-spalva);
+}
+
+textarea:valid {
+    border: 2px solid var(--pirma-spalva);
+  }
+
+
 /*komentarai*/

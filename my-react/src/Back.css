@@ -56,6 +56,12 @@ body {
   .stulpeliu-vaikas1 {
     /*padding: 10px 30px;*/
     margin: 20px;
+    width: 400px;
+    border-radius: 20px;
+  }
+
+  .stulpeliu-vaikas11 {
+    margin: 20px;
     min-width: 400px;
     border-radius: 20px;
   }

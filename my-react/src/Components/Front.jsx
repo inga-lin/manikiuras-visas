@@ -81,7 +81,7 @@ function Front({ show }) {
             </nav>
         </div>
             <div className="stulpeliu-tevass">
-                <div className="stulpeliu-vaikas1">
+                <div className="stulpeliu-vaikas11">
                     <div className="titleee titleees">
                         <h2>Manikiūrai</h2>
                     </div>
