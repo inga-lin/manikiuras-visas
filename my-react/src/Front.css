@@ -112,29 +112,29 @@
     .ull {
      justify-content: space-between;
     }
- }
+}
  
- @media (max-width: 800px){
-     .list{
-      width: 80%;
-     }
+@media (max-width: 800px){
+    .list{
+       width: 80%;
+    }
   
-     .ull {
+    .ull {
       justify-content: space-around;
-     }
-  }
- /*body*/
+    }
+}
+/*body*/
  
- /*Išrūšuoti */
- .container3{
-     background-image: var(--penkta-spalva);
-     border: 2px solid var(--antra-spalva);
-     position: fixed;
-     bottom: 0;
-     z-index: 20;
-     width: 100%;
- }
- .rusiuojam {
+/*Išrūšuoti */
+.container3{
+    background-image: var(--penkta-spalva);
+    border: 2px solid var(--antra-spalva);
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
+    width: 100%;
+}
+.rusiuojam {
      display: flex;
      justify-content: space-between;
      margin: 10px 20px;
@@ -179,8 +179,16 @@
     flex-wrap: wrap;
 }
 
+.kom-atvaizdavimass:last-child {
+    border-bottom: none;
+}
+
 .manikiuro-listass:hover  .kom-atvaizdavimass {
     border-bottom: 3px solid var(--pirma-spalva);
+}
+
+.manikiuro-listass:hover .kom-atvaizdavimass:last-child {
+    border-bottom: none;
 }
 
 textarea:valid {
@@ -198,3 +206,61 @@ textarea:valid {
     box-shadow: rgba(0, 0, 0, 0.35) 3px 3px 3px; 
 }
 /*komentarai*/
+
+/*nav juosta tel*/
+.slaptas-drop {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.slaptas {
+    position: relative;
+    display: inline-block;
+}
+
+.drop-down {
+    display: none;
+    position: absolute;
+    background-image: var(--penkta-spalva);
+    min-width: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
+    z-index: 1;
+    padding-right: 30px;
+    right: 10px;
+    border-radius: 20px;
+    border: 2px solid var(--antra-spalva);
+}
+
+.drop-down .nav-link{
+    color: black;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.slaptas:hover .drop-down {
+    display: block;
+}
+
+.aa:hover {
+    color: var(--pirma-spalva);
+}
+
+@media (max-width: 800px){
+  .slaptas-drop {
+    display: block;
+  }
+
+  .navbar-man {
+    display: none;
+  }
+
+}
+
+/*nav juosta tel*/

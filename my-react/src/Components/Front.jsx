@@ -77,7 +77,16 @@ function Front({ show }) {
                     <Link className="nav-link" to="/klasikinis">Klasikinis</Link>{/*//a.butinas linkams /leaf nurodo kaip i ji patekti i http://localhost:3000/leaf*/}
                     <Link className="nav-link" to="/prancuziskas">Prancūziškas</Link>{/*a.<Link> ir isrusiuoja */}
                     <Link className="nav-link" to="/kombinuotas">Kombinuotas</Link>{/* a.<Link> ir isrusiuoja */}
-                </div>   
+                </div> 
+                <div className="slaptas">
+                    <button className="slaptas-drop" >Visi</button>
+                    <div className="drop-down">
+                    <Link className="nav-link aa" to="/">Visi</Link>
+                    <Link className="nav-link aa" to="/klasikinis">Klasikinis</Link>{/*//a.butinas linkams /leaf nurodo kaip i ji patekti i http://localhost:3000/leaf*/}
+                    <Link className="nav-link aa" to="/prancuziskas">Prancūziškas</Link>{/*a.<Link> ir isrusiuoja */}
+                    <Link className="nav-link aa" to="/kombinuotas">Kombinuotas</Link>
+                    </div>
+                </div> 
             </nav>
         </div>
             <div className="stulpeliu-tevass">
