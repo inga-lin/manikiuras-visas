@@ -178,15 +178,17 @@
     display: grid;
     gap: 5px;
     padding: 1px;
-    margin: 1px;
+    margin: 1px; 
 }
 
 .kom-atvaizdavimass {
     border-bottom: 3px solid var(--trecia-spalva);
     padding: 5px 5px;
     margin: 1px;
-    display: flex;
-    flex-wrap: wrap;
+    /*word-wrap: break-word;*/
+    /*overflow:auto;/*jeigu per ilgas tekstas padaro jam skrolo juosta*/
+    word-break: break-all;/*perskiria viena ilga zodi i kelis kad tilptu i konteineri*/
+    
 }
 
 .kom-atvaizdavimass:last-child {
