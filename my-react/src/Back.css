@@ -3,153 +3,171 @@
 /*------------*/
 body {
     font-family: 'Lobster', cursive;
-  }
-  :root {
+}
+
+:root {
     --pirma-spalva: rgb(194, 225, 255);
     --antra-spalva: rgb(136, 157, 179);
     --trecia-spalva: rgb(255, 194, 215);
     --ketvirta-spalva: #b38897;
     --penkta-spalva: linear-gradient(260deg, rgb(194, 225, 255), rgb(255, 194, 215));
-  }
-  /*bendros detales*/
-  button {
-    padding: 5px 10px;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.7s;
-    border: 2px solid var(--antra-spalva);
-  }
-  
-  input  {
-    border-radius: 20px;
-    padding: 5px 10px;
-    border-color:  var(--antra-spalva);
-  }
-  
-  select {
-    border-radius: 20px;
-    padding: 5px 7px;
-    border-color:  var(--antra-spalva);
-    border: 2px solid var(--antra-spalva);
-    cursor: pointer;
-  }
-  
-  option {
-    border-radius: 20px;
-    border-style: hidden;
-    background-color: var(--pirma-spalva);
-  }
-  option:hover {
-    cursor: pointer;
-  }
-  
-  /*bendros detales*/
-  
-  .stulpeliu-tevas{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .stulpeliu-vaikas1 {
-    /*padding: 10px 30px;*/
-    margin: 20px;
-    width: 400px;
-    border-radius: 20px;
-  }
+}
 
-  .stulpeliu-vaikas11 {
-    margin: 20px;
-    min-width: 400px;
-    border-radius: 20px;
-  }
+/*bendros detales*/
+button {
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.7s;
+  border: 2px solid var(--antra-spalva);
+}
   
-  .sarasas, .titleee {
-    box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
-  }
-  .stulpeliu-vaikas2 {
-    /*padding: 10px 30px;*/
-    margin: 20px;
-    min-width: 400px;
-    border-radius: 20px;
-  }
+input  {
+  border-radius: 20px;
+  padding: 5px 10px;
+  border-color:  var(--antra-spalva);
+}
   
-  .titleee {
-    background-color: var(--pirma-spalva);
-    border-left: 3px solid var(--antra-spalva);
-    border-right: 3px solid var(--antra-spalva);
-    border-top: 3px solid var(--antra-spalva);
-    border-radius: 0px 25px 0px 0px;
-    text-align: center;
-    width: 100%;
-  }
+select {
+  border-radius: 20px;
+  padding: 5px 7px;
+  border-color:  var(--antra-spalva);
+  border: 2px solid var(--antra-spalva);
+  cursor: pointer;
+}
   
-  h2 {
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    padding: 20px;
-  }
+option {
+  border-radius: 20px;
+  border-style: hidden;
+  background-color: var(--pirma-spalva);
+}
+
+option:hover {
+  cursor: pointer;
+}
+/*bendros detales*/
+/*loginas*/
+.login {
+  border: 3px solid var(--antra-spalva);
+  background-color: var(--trecia-spalva);
+  width: 50px;
+  padding: 5px 15px;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
+}
+
+.login:hover {
+  background-color: var(--pirma-spalva);
+  box-shadow: rgba(0, 0, 0, 0.35) 4px 4px 4px; 
+  transition: 1s;
+}
+/*loginas*/
+
+.stulpeliu-tevas{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
   
-  .ul {
-    list-style-type: none;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-  }
+.stulpeliu-vaikas1 {
+  /*padding: 10px 30px;*/
+  margin: 20px;
+  width: 400px;
+  border-radius: 20px;
+}
+
+.stulpeliu-vaikas11 {
+  margin: 20px;
+  min-width: 400px;
+  border-radius: 20px;
+}
   
-  ul {
-    list-style-type: none;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-  }
+.sarasas, .titleee {
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
+}
+
+.stulpeliu-vaikas2 {
+  /*padding: 10px 30px;*/
+  margin: 20px;
+  min-width: 400px;
+  border-radius: 20px;
+}
   
-  .li{
-    border-bottom: 3px solid var(--antra-spalva);
-    width: 90%;
-    padding: 10px;
-    margin-left: -10px;
-  }
+.titleee {
+  background-color: var(--pirma-spalva);
+  border-left: 3px solid var(--antra-spalva);
+  border-right: 3px solid var(--antra-spalva);
+  border-top: 3px solid var(--antra-spalva);
+  border-radius: 0px 25px 0px 0px;
+  text-align: center;
+  width: 100%;
+}
   
-  .li:last-child {
-    border-bottom: none;
-  }
+h2 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding: 20px;
+}
   
-  .sarasas{
-    background-color: var(--trecia-spalva);
-    width: 100%;
-    border: 3px solid var(--antra-spalva);
-    border-radius: 0px 0px 0px 25px;
-  }
+.ul {
+  list-style-type: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
   
-  /*forma prazia*/
-  .formos-vidus {
-    display: grid;
-    gap: 10px;
-    padding: 10px;
-  }
+ul {
+  list-style-type: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
   
-  .forma {
-    display: flex;
-    justify-content: space-between;
-  }
+.li{
+  border-bottom: 3px solid var(--antra-spalva);
+  width: 90%;
+  padding: 10px;
+  margin-left: -10px;
+}
   
-  label {
-    font-size: 20px;
-  }
+.li:last-child {
+  border-bottom: none;
+}
   
-  .forma-buttons {
-    background-color: var(--pirma-spalva);
-    border-color: var(--antra-spalva);
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
-    width: 30%;
-  }
+.sarasas{
+  background-color: var(--trecia-spalva);
+  width: 100%;
+  border: 3px solid var(--antra-spalva);
+  border-radius: 0px 0px 0px 25px;
+}
+  
+/*forma prazia*/
+.formos-vidus {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+  
+.forma {
+  display: flex;
+  justify-content: space-between;
+}
+  
+label {
+  font-size: 20px;
+}
+  
+.forma-buttons {
+  background-color: var(--pirma-spalva);
+  border-color: var(--antra-spalva);
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
+  width: 30%;
+}
   
   .forma-buttonss {
     display: flex;
     justify-content: center;
-    
   }
   
   .forma-buttons:hover {

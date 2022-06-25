@@ -109,10 +109,10 @@ const deleteComment = id => {//700 istrinam komentarus is Components/TreeLine.js
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <Link to="/logout">Log OUT</Link>{/*505 prisijungimui*/}
+      <div className="container-login">
+        <div className="con-login">
+          <div className="login">
+            <Link to="/logout">Išeiti</Link>{/*505 prisijungimui*/}
           </div>
         </div>
       </div>
