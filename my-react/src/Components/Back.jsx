@@ -4,6 +4,8 @@ import '../Back.css';
 import Create from './Back/Create';
 import ManikiuroListoAtvaizdavimas from './Back/ManikiuroListoAtvaizdavimas';
 import Modal from './Back/Modal';
+import { authConfig } from '../Functions/auth';//505 reikalingas admino paskyrai su slaptazodziu
+import { Link } from 'react-router-dom';//505
 //import './bootstrap.css';
 
 
@@ -28,7 +30,7 @@ function Back() {
 
  //Read //2 bendraujam su serveriu ir issitraukiam info is savo D.B.///////
   useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info is savo D.B.///////
-    axios.get('http://localhost:3003/manikiuro-manager')
+    axios.get('http://localhost:3003/admin/manikiuro-manager', authConfig())//505 buvo be admino prisijungimo axios.get('http://localhost:3003/manikiuro-manager')
     .then(res => {
       console.log(res.data);//2 bendraujam su serveriu ir issitraukiam info 
       setManikiuras(res.data);//2 bendraujam su serveriu ir issitraukiam info 
@@ -107,6 +109,13 @@ const deleteComment = id => {//700 istrinam komentarus is Components/TreeLine.js
 
   return (
     <>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <Link to="/logout">Log OUT</Link>{/*505 prisijungimui*/}
+          </div>
+        </div>
+      </div>
     <div className="p-contai">
       <div className="stulpeliu-tevas">
         <Create setCreateData={setCreateData}></Create>{/*3.setCreateData*/}

@@ -1,6 +1,9 @@
 import Back from "./Components/Back";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Front from "./Components/Front";
+import LoginPage from "./Components/LoginPage";//505 reikalingas admino paskyrai su slaptazodziu
+import LogoutPage from "./Components/LogoutPage";//505 reikalingas admino paskyrai su slaptazodziu
+import RequireAuth from "./Components/RequireAuth";//505 reikalingas admino paskyrai su slaptazodziu
 
 function App() {
 
@@ -8,10 +11,20 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Front show="all"/>}/>{/*a.<Link> ir isrusiuoja//a.show yra propsas kuri perduodam i Front.jsx*/}
-        <Route path='admin' element={<Back/>}></Route>
+        <Route path="/login" element={<LoginPage />} />{/*//505 reikalingas admino paskyrai su slaptazodziu*/}
+        <Route path="/logout" element={<LogoutPage />} />{/*//505 reikalingas admino paskyrai su slaptazodziu*/}
+        
         <Route path="klasikinis" element={<Front show="klasikinis"/>} /> {/*a.<Link> ir isrusiuoja//b.show yra propsas kuri perduodam i Front.jsx*/}
         <Route path="prancuziskas" element={<Front show="prancuziskas"/>} /> {/*a.<Link> ir isrusiuoja//b.show yra propsas kuri perduodam i Front.jsx*/}
         <Route path="kombinuotas" element={<Front show="kombinuotas"/>} /> {/*a.<Link> ir isrusiuoja//b.show yra propsas kuri perduodam i Front.jsx*/}
+        <Route
+              path="/admin"
+              element={
+                <RequireAuth>
+                  <Back/>
+                </RequireAuth>
+              }
+            />      
       </Routes>
     </BrowserRouter>
   )
@@ -34,4 +47,26 @@ function App() {
   )
 }
 export default App;
+*/
+
+/*
+taip atrode be prisijungimo
+import Back from "./Components/Back";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import Front from "./Components/Front";
+
+function App() {
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Front show="all"/>}/>{/*a.<Link> ir isrusiuoja//a.show yra propsas kuri perduodam i Front.jsx*
+        //<Route path='admin' element={<Back/>}></Route>
+        //<Route path="klasikinis" element={<Front show="klasikinis"/>} /> {/*a.<Link> ir isrusiuoja//b.show yra propsas kuri perduodam i Front.jsx
+        //<Route path="prancuziskas" element={<Front show="prancuziskas"/>} /> {/*a.<Link> ir isrusiuoja//b.show yra propsas kuri perduodam i Front.jsx
+        //<Route path="kombinuotas" element={<Front show="kombinuotas"/>} /> {/*a.<Link> ir isrusiuoja//b.show yra propsas kuri perduodam i Front.jsx
+     // </Routes>
+   // </BrowserRouter>
+  //)
+//}
 */
