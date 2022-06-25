@@ -77,7 +77,7 @@ app.get("/login-check", (req, res) => {
   });
 });
 
-        //jeigu suvedant slaprazodi su name sutampa tai mums uzkraus puslapi(res.send({ msg: 'ok', key });) jei ne, neatidarysres.send({ msg: 'error', key: '' });
+        //jeigu suvedant slaprazodi su vardas sutampa tai mums uzkraus puslapi(res.send({ msg: 'ok', key });) jei ne, neatidarysres.send({ msg: 'error', key: '' });
         //musu vedamas slaprazodis tikrinamas su musu serveryje uzkuoduotu kodu is https://www.md5hashgenerator.com/
          // md5(req.body.pass) sitoje vietoje uzkuoduoja musu paprasta slaptazodi
 app.post("/login", (req, res) => {
@@ -184,26 +184,70 @@ app.delete('/manikiuro-manager/:id', (req, res) => { //delytinam is trees lntele
 })
 ////////////////////////////
 ////////////////////////////
-//edit(redaguoti) mygtukas
+//edit(redaguoti) mygtukas BE NUOTRAUKOS
 ////8.Create paspaudus redaguoti(edit) Modale keiciami duomenys ir atvaizduojami Creat o liste/////
 //buvo tik saugojimas be nuotraukos MODALO
+//app.put("/manikiuro-manager/:id", (req, res) => {
+//const sql = `
+//UPDATE salonas
+//SET vardas = ?, tipas = ?, kaina = ?, trukme = ? 
+//WHERE id = ?
+//`;
+ // con.query(
+ // sql,
+ // [req.body.vardas, req.body.tipas, req.body.kaina, req.body.trukme,  req.params.id],
+ // (err, results) => {
+ //   if (err) {
+ //     throw err;
+ //   }
+ //   res.send(results);
+  //}
+//);
+//});
+
+//KOREGUOTI
+//edit(redaguoti) mygtukas SU NUOTRAUKOS
+//606+//600 apsirasom kaip plius serveryje istrinam foto
+// UPDATE table_name
+// SET column1 = value1, column2 = value2, ...
+// WHERE condition;
 app.put("/manikiuro-manager/:id", (req, res) => {
-const sql = `
-UPDATE salonas
-SET vardas = ?, tipas = ?, kaina = ?, trukme = ? 
-WHERE id = ?
-`;
-  con.query(
-  sql,
-  [req.body.vardas, req.body.tipas, req.body.kaina, req.body.trukme,  req.params.id],
-  (err, results) => {
-    if (err) {
-      throw err;
+  let sql;//606 siunciam foto
+  let args;//argsargumentai
+    if('' === req.body.nuotrauka && req.body.del == 0) {//jeigu tuscias stringas yra foto, tai nerodom nuotraukos rodom tik vardas  tipas kaina
+      sql = `
+        UPDATE salonas
+        SET vardas = ?, tipas = ?, kaina = ?, trukme = ? 
+        WHERE id = ?
+    `;
+      args = [req.body.vardas, req.body.tipas, req.body.kaina, req.body.trukme, req.params.id];
+    } else if(1 == req.body.del) {// jeigu yra 1 trinsim foto(nuotrauka bus null)
+        sql = `
+        UPDATE salonas
+        SET vardas = ?, tipas = ?, kaina = ?, trukme = ?, nuotrauka = NULL
+        WHERE id = ?
+    `;
+    args = [req.body.vardas, req.body.tipas, req.body.kaina,req.body.trukme, req.params.id];
+    } else { //kitu atveju rodysim nuotrauka
+      sql = `
+      UPDATE salonas
+      SET vardas = ?, tipas = ?, kaina = ?, trukme = ?, nuotrauka = ?
+      WHERE id = ?
+  `;
+  args = [req.body.vardas, req.body.tipas, req.body.kaina, req.body.trukme, req.body.nuotrauka, req.params.id];
     }
-    res.send(results);
-  }
-);
+  con.query(
+    sql,
+    args,
+    (err, results) => {
+      if (err) {
+        throw err;
+      }
+      res.send(results);
+    }
+  );
 });
+
 /////////////////////////
 //////////////////////////
 ///700 komentaru istrinimas is beckendo puses+
@@ -242,14 +286,14 @@ app.delete("/manikiuro-delete-comment/:id", (req, res) => { //delytinam is trees
   //});
 
 
-  /////////////////////////////////// 404//+KOMENTARAI aprasymas fronte//505 ir cia isidedam m.photo,
+  /////////////////////////////////// 404//+KOMENTARAI aprasymas fronte//505 ir cia isidedam m.nuotrauka,
 //???? is kur tas cid - k.id AS cid- cia mes pervadinom savo k.id i cid
 //m.id AS id - irgi pervadinom (kazkodel neitraukem i ta sarasa medziai_id)
 //FROM table1 <- is lentels trees 
 ///LEFT JOIN table2 <- prijungiam lentele komentarai(ji turi buti kaireje puseje phpMyAdmin kur su virvute jungiam)
-//ON table1.column_name = table2.column_name; <- nusakom taisykle pagal ka jas jungiam ON m.id = k.medziai_id (trees.id ir komentarai.medziai_id)
-///m.id AS id, m.name, m.height, m.type, m.count, m.sum, k.con, k.id AS cid
-//m.id AS id, m.name, m.height, m.type, m.count, m.sum, GROUP_CONCAT(k.com, '-^o^-') AS comments, k.id AS cid !!! pas mane con o ne com
+//ON table1.column_name = table2.column_vardas; <- nusakom taisykle pagal ka jas jungiam ON m.id = k.medziai_id (trees.id ir komentarai.medziai_id)
+///m.id AS id, m.vardas, m.kaina, m.tipas, m.count, m.sum, k.con, k.id AS cid
+//m.id AS id, m.vardas, m.kaina, m.tipas, m.count, m.sum, GROUP_CONCAT(k.com, '-^o^-') AS comments, k.id AS cid !!! pas mane con o ne com
 //kodel rasom (k.con, '-^o^-') nes kitaip komentaru gale raso kableli ir tada viskas sugriuva(jis dabar tai ides i gala, Front/TreeLine.jsx nusiimsim ta kartinuka)
 app.get('/manikiuro-list/all', (req, res) => {//all atskiras routas visu medziu gavimui
   const sql = `
