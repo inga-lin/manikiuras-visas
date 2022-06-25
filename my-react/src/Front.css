@@ -54,10 +54,17 @@
 
     .titleees {
         text-align: left;
+        max-width: 400px;
+        margin-left: calc(50% - 200px);
     }
+
+    .ull {
+        margin-left: -30px;
+    }
+
  }
 
- @media (max-width: 400px){
+ @media (max-width: 415px){
     .ull {
         margin-left: -60px;
     }
@@ -65,6 +72,13 @@
     .manikiuro-buttons {
         font-size: 12px;
     }
+
+    .titleees {
+        text-align: left;
+        max-width: 350px;
+        margin-left: calc(50% - 210px);
+    }
+
  }
  
  .search > input{
