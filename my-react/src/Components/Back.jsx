@@ -5,7 +5,7 @@ import Create from './Back/Create';
 import ManikiuroListoAtvaizdavimas from './Back/ManikiuroListoAtvaizdavimas';
 import Modal from './Back/Modal';
 import { authConfig } from '../Functions/auth';//505 reikalingas admino paskyrai su slaptazodziu
-import { Link } from 'react-router-dom';//505
+import { Link } from 'react-router-dom';//505 reikalingas admino paskyrai su slaptazodziu
 //import './bootstrap.css';
 
 

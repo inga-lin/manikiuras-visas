@@ -302,6 +302,26 @@ textarea:valid {
     color: var(--pirma-spalva);
 }
 
+/*nav juosta tel*/
+
+/*nuotrauka*/
+
+.cont-nuotrauka {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nuotrauka {
+    display: flex;
+    justify-content: center;
+}
+
+.nuotrauka > img {
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
+    border-radius: 0px 20px 0px 20px;
+    
+}
+/*nuotrauka*/
 @media (max-width: 800px){
   .slaptas-drop {
     display: block;

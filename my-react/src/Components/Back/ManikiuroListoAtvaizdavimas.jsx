@@ -13,6 +13,9 @@ function ManikiuroListoAtvaizdavimas({manikiuras, setIstrintiId, setRedaguotiMod
                         <button type="button" className="manikiuro-buttons redaguoti" onClick={()=>setRedaguotiModalData(manikiuras)}>Redaguoti</button>{/*7.Modalo iskvietimas*/}
                         <button type="button" className="manikiuro-buttons istrinti" onClick={()=>setIstrintiId({id:manikiuras.id})}>Ištrinti</button> {/*////6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa jo info*/}
                     </div>
+                </div> 
+                <div className="nuotrauka">{/*606 nuotraukos atvaizdavimas*/}
+                    <img alt="" style={{height:"80px"}} src={manikiuras.nuotrauka}></img>{/*505atvaizduojam nuotrauka*/}
                 </div>
                 <ul className="back-komentarai">{/*40004 komentaro idejimas*/}
                 <h3>Komentarai</h3>

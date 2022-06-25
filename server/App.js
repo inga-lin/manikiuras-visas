@@ -152,12 +152,12 @@ app.post('/manikiuro-manager', (req, res) => { //2 bendraujam su serveriu   //1-
   
   const sql = `
   INSERT INTO salonas
-  (vardas, tipas, kaina, trukme)
-  VALUES (?, ?, ?, ?)
+  (vardas, tipas, kaina, trukme, nuotrauka)
+  VALUES (?, ?, ?, ?, ?)
   `;
   con.query(
     sql,
-    [req.body.vardas, req.body.tipas, !req.body.kaina ? 0 : req.body.kaina, !req.body.trukme ? 0 : req.body.trukme], //jeigu tuscias trukmes ir kaina laukelis bus 0
+    [req.body.vardas, req.body.tipas, !req.body.kaina ? 0 : req.body.kaina, !req.body.trukme ? 0 : req.body.trukme, req.body.nuotrauka], //jeigu tuscias trukmes ir kaina laukelis bus 0
     (err, results) => {
       if (err) {
         throw err;
