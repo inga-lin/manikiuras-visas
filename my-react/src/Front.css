@@ -47,6 +47,11 @@
     justify-content: flex-end;
  }
  
+ @media (max-width: 450px){
+    .search{
+        justify-content: flex-start;
+    }
+ }
  
  .search > input{
      width: 39px;

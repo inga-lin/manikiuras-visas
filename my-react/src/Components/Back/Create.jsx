@@ -54,11 +54,11 @@ function Create({setCreateData}) {
             <div className="sarasas">
                 <div className="formos-vidus">
                     <div className="forma">
-                        <label>Manikiuro meistre:</label>
+                        <label>Meistrė:</label>
                         <input type="text" className="form-control" placeholder="Manikiuro meistre" value={vardas} onChange={e => inputHandler(e, 'vardas')}/>
                     </div>
                     <div className="forma">
-                        <label>Manikiūro rūšys:</label>
+                        <label>Rūšys:</label>
                         <select className="form-control" value={tipas}  onChange={e => inputHandler(e, 'tipas')} >
                             <option  value="1">Klasikinis manikiūras</option>
                             <option  value="2">Prancūziškas manikiūras</option>

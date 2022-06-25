@@ -20,7 +20,7 @@ function ManikiuroListoAtvaizdavimas({manikiuras, setIstrintiId, setRedaguotiMod
                         manikiuras.comments ? manikiuras.comments.slice(0, -5).split('-^o^-,').map((c, i) => (
                             
                             <li className="back-komentaras" key={i}>{c} {/*c-komentaras*/}{/*tree.cid.-komentaru id*/}
-                            <div>
+                            <div className="back-komentaras-istrinti">
                                 <button type="button" className="manikiuro-buttons istrinti trint" onClick={() => deleteComment(manikiuras.cid.split(',')[i])}>Ištrinti</button>{/*700 komentaro istrinimas*/}
                             </div>
                             </li>)) : null

@@ -70,12 +70,18 @@ option:hover {
   background-image: var(--penkta-spalva);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
-  width: 350px;
+  width: 320px;
   padding: 10px;
   margin-left: calc(50% - 175px);
   margin-top: 20px;
 }
 
+@media (max-width: 360px){
+  .stulpelis-loginas{
+    max-width: 270px;
+    margin-left: calc(50% - 145px);
+  }
+}
 .loginas-v {
   display: flex;
   justify-content: space-between;
@@ -123,6 +129,14 @@ option:hover {
   min-width: 400px;
   border-radius: 20px;
 }
+
+@media (max-width: 800px){
+  .stulpeliu-vaikas2 {
+    min-width: 330px;
+  }
+
+}
+
   
 .titleee {
   background-color: var(--pirma-spalva);
@@ -334,19 +348,25 @@ label {
 }
 
 .back-komentaras {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  gap: 10px;
   border-bottom: 3px solid var(--pirma-spalva);
   padding: 15px 5px;
+  word-break: break-all;/*perskiria viena ilga zodi i kelis kad tilptu i konteineri*/
 }
 
 .back-komentaras:last-child {
   border-bottom: none;
 }
 
+.back-komentaras-istrinti{
+  display: flex;
+  justify-content: end;
+}
 .trint {
   padding: 5px 22px;
   color: white;
+  
 }
 
 .trint:hover {
