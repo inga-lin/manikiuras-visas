@@ -51,6 +51,20 @@
     .search{
         justify-content: flex-start;
     }
+
+    .titleees {
+        text-align: left;
+    }
+ }
+
+ @media (max-width: 400px){
+    .ull {
+        margin-left: -60px;
+    }
+
+    .manikiuro-buttons {
+        font-size: 12px;
+    }
  }
  
  .search > input{
