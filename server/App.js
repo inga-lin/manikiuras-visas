@@ -205,7 +205,7 @@ app.delete('/manikiuro-manager/:id', (req, res) => { //delytinam is trees lntele
 //);
 //});
 
-//KOREGUOTI
+//REDAGUOTI su nuotrauka
 //edit(redaguoti) mygtukas SU NUOTRAUKOS
 //606+//600 apsirasom kaip plius serveryje istrinam foto
 // UPDATE table_name
