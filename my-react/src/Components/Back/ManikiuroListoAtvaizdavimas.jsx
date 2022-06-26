@@ -15,7 +15,7 @@ function ManikiuroListoAtvaizdavimas({manikiuras, setIstrintiId, setRedaguotiMod
                     </div>
                 </div> 
                 <div className="nuotrauka">{/*606 nuotraukos atvaizdavimas*/}
-                    <img alt="" style={{height:"80px"}} src={manikiuras.nuotrauka}></img>{/*505atvaizduojam nuotrauka*/}
+                    <img alt="" style={{height:"80px"}} src={manikiuras.nuotrauka}></img>{/*606atvaizduojam nuotrauka*/}
                 </div>
                 <ul className="back-komentarai">{/*40004 komentaro idejimas*/}
                 <h3>Komentarai</h3>

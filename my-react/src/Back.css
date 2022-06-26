@@ -42,6 +42,7 @@ option {
   border-radius: 20px;
   border-style: hidden;
   background-color: var(--pirma-spalva);
+  cursor: pointer;
 }
 
 option:hover {
@@ -284,46 +285,61 @@ label {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;/*padaro per viduri */
+    justify-content: center;/*padaro per viduri */
     position: fixed;
   }
   
-  .modal-header {
-    background-color: var(--pirma-spalva);
-    border-left: 3px solid var(--antra-spalva);
-    border-right: 3px solid var(--antra-spalva);
-    border-top: 3px solid var(--antra-spalva);
-    border-radius: 0px 25px 0px 0px;
-    text-align: center;
-    width: 100%;
-    position: relative;
+.modal-header {
+  background-color: var(--pirma-spalva);
+  border-left: 3px solid var(--antra-spalva);
+  border-right: 3px solid var(--antra-spalva);
+  border-top: 3px solid var(--antra-spalva);
+  border-radius: 0px 25px 0px 0px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 400px){
+  .modal-content {
+    width: 320px;
   }
+}
   
-  .close {
-    position: absolute ;
-    right: -20px;
-    top: -20px;
-    background-color: var(--ketvirta-spalva);
-    width: 40px;
-    height: auto;
-  }
+.close {
+  position: absolute ;
+  right: -20px;
+  top: -20px;
+  background-color: var(--ketvirta-spalva);
+  width: 40px;
+  height: auto;
+}
   
-  .close > span {
-    font-size: 20px;
-  }
+.close > span {
+  font-size: 20px;
+}
+
+.forma-nuotrauka{
+  padding: 10px;
+}
+
+.nuotrauka-choose{
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-footer{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
   
-  .modal-footer{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-  
-  .save {
-    background-color: var(--pirma-spalva);
-    box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
-  }
+.save {
+  background-color: var(--pirma-spalva);
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
+}
   
 .save:hover{
   color: white;

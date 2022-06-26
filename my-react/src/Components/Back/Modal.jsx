@@ -93,8 +93,8 @@ function Modal ({setRedaguotiModalData, redaguotiModalData, setRedaguotiCreateDa
         return null;
     }
     return(
-        <div className="modal modal-dialog-centered" id="modal">
-            <div className="modal-dialog">
+        <div className="modal" id="modal">
+            <div>
                 <div className="modal-content">
                     <div className="modal-header">
                         <h2 className="modal-title" id="exampleModalLabel">Redaguoti</h2>
@@ -106,11 +106,11 @@ function Modal ({setRedaguotiModalData, redaguotiModalData, setRedaguotiCreateDa
                         <div className="sarasas">
                             <div className="formos-vidus">
                                 <div className="forma">
-                                    <label>Manikiuro meistre:</label>
+                                    <label>Meistė:</label>
                                     <input type="text" className="form-control" placeholder="Manikiuro meistre" value={vardas} onChange={e => inputHandler(e, 'vardas')}/>
                                 </div>
                                 <div className="forma">
-                                    <label>Manikiūro rūšys:</label>
+                                    <label>Rūšys:</label>
                                     <select className="form-control" value={tipas}  onChange={e => inputHandler(e, 'tipas')} >
                                        <option  value="1">Klasikinis manikiūras</option>
                                        <option  value="2">Prancūziškas manikiūras</option>
@@ -126,14 +126,14 @@ function Modal ({setRedaguotiModalData, redaguotiModalData, setRedaguotiCreateDa
                                     <input type="text" className="form-control"placeholder="Trukme" value={trukme}  onChange={e => inputHandler(e, 'trukme')}/>
                                 </div>
                             </div>
-                            <div className="col-12">{/*600 nuotraukos redagavimas*/}
-                                <div className="form-group">{/*600 -cia padarom kad foto galima butu pakeisti ir su <input type="checkbox" pazymejus ji istrina nuotrauka*/}
+                            <div className="forma-nuotrauka">{/*600 nuotraukos redagavimas*/}
+                                <div className="nuotrauka-choose">{/*600 -cia padarom kad foto galima butu pakeisti ir su <input type="checkbox" pazymejus ji istrina nuotrauka*/}
                                     <label>Nuotrauka</label>
                                     <input ref={fileInput} type="file" className="form-control" />{/*600 cia butinai dadeti ref={fileInput}-(ateina su getBase64 atsiradimu) o type="file"- su input laukelio kurimu, kad buutonas failo pasirinkimui atsirastu*/}
                                 </div>
                             </div>
-                            <div className="col-2">
-                                <div className="form-group form-check">
+                            <div className="forma-nuotrauka">
+                                <div className="nuotrauka-checkbox">
                                     <input type="checkbox" className="form-check-input" onChange={() => setRemove(r => !r)}  checked={remove} />{/*600 istrinam nuotrauka jeigu uzdesim varnele*/}
                                     <label className="form-check-label">Ištrinti nuotrauką</label>
                                 </div>
